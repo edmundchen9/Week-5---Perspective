@@ -10,6 +10,9 @@ public class MovementActivator7 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+    objectToActivate.GetComponent<MoveObject7>().enabled = false;
+    //added other
+    otherObjectToActivate.GetComponent<MoveObject7>().enabled = false;
     }
 
     // Update is called once per frame
@@ -18,14 +21,16 @@ public class MovementActivator7 : MonoBehaviour
         
     }
 
-    private void onTriggerEnter(Collider other)
+//capitalize On for these methods
+    private void OnTriggerEnter(Collider other)
     {
         objectToActivate.GetComponent<MoveObject7>().enabled = true;
         otherObjectToActivate.GetComponent<MoveObject7>().enabled = true;
     }
-    private void pnTriggerExit(Collider other)
+    //onTriggerExit spelt incorrectly
+    private void OnTriggerExit(Collider other)
     {
-        objectToActivate.GetComponent<MoveObject7>().enabled = true;
-        otherObjectToActivate.GetComponent<MoveObject7>().enabled = true;
+        objectToActivate.GetComponent<MoveObject7>().enabled = false;
+        otherObjectToActivate.GetComponent<MoveObject7>().enabled = false;
     }
 }

@@ -10,6 +10,9 @@ public class MovementActivator8 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+    //added to make sure doors stay false in beginning
+    objectToActivate.GetComponent<MoveObject8>().enabled = false;
+    otherObjectToActivate.GetComponent<MoveObject8>().enabled = false;
     }
 
     // Update is called once per frame
@@ -17,13 +20,14 @@ public class MovementActivator8 : MonoBehaviour
     {
         
     }
-
-    private void onTriggerEnter(Collider other)
+    
+    //capitalization of methods
+    private void OnTriggerEnter(Collider other)
     {
         objectToActivate.GetComponent<MoveObject8>().enabled = true;
         otherObjectToActivate.GetComponent<MoveObject8>().enabled = true;
     }
-    private void pnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         objectToActivate.GetComponent<MoveObject8>().enabled = true;
         otherObjectToActivate.GetComponent<MoveObject8>().enabled = true;

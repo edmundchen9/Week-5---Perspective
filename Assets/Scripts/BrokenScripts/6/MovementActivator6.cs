@@ -10,6 +10,9 @@ public class MovementActivator6 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //start had no preset on objectToActivate
+    objectToActivate.GetComponent<MoveObject6>().enabled = false;
+    otherObjectToActivate.GetComponent<MoveObject6>().enabled = false;
     }
 
     // Update is called once per frame
@@ -25,7 +28,7 @@ public class MovementActivator6 : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        objectToActivate.GetComponent<MoveObject6>().enabled = true;
-        otherObjectToActivate.GetComponent<MoveObject6>().enabled = true;
+        objectToActivate.GetComponent<MoveObject6>().enabled = false;
+        otherObjectToActivate.GetComponent<MoveObject6>().enabled = false;
     }
 }

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class MoveObject6 : MonoBehaviour
 {
-    float moveSpeed;
+    //serialize field
+    [SerializeField] float moveSpeed;
     [SerializeField] Vector3 moveDirection;
 
     float totalMoveDistance;
